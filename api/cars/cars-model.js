@@ -23,4 +23,11 @@ const create = () => {
   // DO YOUR MAGIC
 };
 
-module.exports = { getAll, getById, create };
+const getByVin = (vin) => {
+  return db("cars")
+  .select("id")
+  .where("vin", vin)
+  .first()
+}
+
+module.exports = { getAll, getById, create, getByVin };

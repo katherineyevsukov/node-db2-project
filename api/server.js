@@ -14,7 +14,7 @@ server.get('/', (req, res, next) => {
 
 server.use((err, req, res, next) => {
     res.status(err.status || 500).json({
-        message: process.env.NODE_ENV === 'PROD' ? 'sorry, there was an error!' : err.mesage,
+        message: process.env.NODE_ENV === 'PROD' ? 'sorry, there was an error!' : err.message,
         stack: err.stack
     })
 })

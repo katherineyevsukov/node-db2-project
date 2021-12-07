@@ -1,7 +1,7 @@
 const db = require('./../../data/db-config')
 
 const getAll = () => {
-  db('cars')
+  return db('cars')
   .select('id', 'vin', 'make', 'model', 'mileage', 'title', 'transmission')
 }
 

@@ -42,11 +42,13 @@ const checkVinNumberValid = (req, res, next) => {
 };
 
 const checkVinNumberUnique = async (req, res, next) => {
-  try{
-    const id = await Car.getByVin(req.body.vin)
-    !id ? next() : next({status: 400, message: `vin ${req.body.vin} already exists`})
-  }catch(err){
-    next(err)
+  try {
+    const id = await Car.getByVin(req.body.vin);
+    !id
+      ? next()
+      : next({ status: 400, message: `vin ${req.body.vin} already exists` });
+  } catch (err) {
+    next(err);
   }
 };
 

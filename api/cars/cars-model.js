@@ -1,5 +1,8 @@
+const db = require('./../../data/db-config')
+
 const getAll = () => {
-  // DO YOUR MAGIC
+  db('cars')
+  .select('id', 'vin', 'make', 'model', 'mileage', 'title', 'transmission')
 }
 
 const getById = () => {
@@ -9,3 +12,5 @@ const getById = () => {
 const create = () => {
   // DO YOUR MAGIC
 }
+
+module.exports = { getAll, getById, create }

@@ -11,4 +11,13 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+router.get('/:id', async (req, res, next) => {
+    try{
+        const car = await Car.getById(req.params.id)
+        res.status(200).json(car)
+        } catch(err){
+            next(err)
+        }
+})
+
 module.exports = router

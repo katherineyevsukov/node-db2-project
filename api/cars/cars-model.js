@@ -5,8 +5,13 @@ const getAll = () => {
   .select('id', 'vin', 'make', 'model', 'mileage', 'title', 'transmission')
 }
 
-const getById = () => {
-  // DO YOUR MAGIC
+const getById = (id) => {
+  
+  return db('cars')
+    .select('id', 'vin', 'make', 'model', 'mileage', 'title', 'transmission')
+    .where('id', id)
+    .first()
+  
 }
 
 const create = () => {

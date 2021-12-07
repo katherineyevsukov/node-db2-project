@@ -1,7 +1,7 @@
 // DO YOUR MAGIC
 const router = require("express").Router();
 const Car = require("./cars-model");
-const { checkCarId } = require('./cars-middleware')
+const { checkCarId, checkCarPayload, checkVinNumberValid, checkVinNumberUnique } = require('./cars-middleware')
 
 router.get("/", async (req, res, next) => {
   try {

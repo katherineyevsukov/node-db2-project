@@ -23,4 +23,4 @@ const checkVinNumberUnique = (req, res, next) => {
   // DO YOUR MAGIC
 }
 
-module.exports = { checkCarId }
+module.exports = { checkCarId, checkCarPayload, checkVinNumberUnique, checkVinNumberValid }
